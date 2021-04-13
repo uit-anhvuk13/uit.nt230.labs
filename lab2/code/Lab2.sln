@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeBackground", "ChangeBackground2\ChangeBackground.csproj", "{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDBD3441-4482-485D-95B4-3E8AB9EDEDBF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AF9AA98-FE69-421B-B312-D40D4C200618}
+	EndGlobalSection
+EndGlobal
