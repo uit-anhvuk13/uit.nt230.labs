@@ -33,29 +33,39 @@ namespace lab2_b._1._1._4
             bool bWait
         );
 
+        // that event occurs when switch users (???)
+        protected override void OnSessionChange(SessionChangeDescription changeDescription)
+        {
+            if (changeDescription.Reason == SessionChangeReason.SessionLogon)
+            {
+                // from win vista, session id simply start with 1 and increase
+                // so just brute force the session id
+                for (int session = 5; session > 0; --session)
+                {
+                    Thread t = new Thread(() =>
+                    {
+                        try
+                        {
+                            String title = "Alert", msg = "18520401 - 18521205";
+                            int resp;
+                            WTSSendMessage(
+                                IntPtr.Zero, session,
+                                title, title.Length,
+                                msg, msg.Length,
+                                4, 0, out resp, true
+                            );
+                        }
+                        catch { }
+                    });
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.Start();
+                }
+                base.OnSessionChange(changeDescription);
+            }
+        }
+
         protected override void OnStart(string[] args)
         {
-            for (int session = 5; session > 0; --session)
-            {
-                Thread t = new Thread(() =>
-                {
-                    try
-                    {
-                        String title = "Alert", msg = "18520401 - 18521205";
-                        int resp;
-                        WTSSendMessage(
-                            IntPtr.Zero, session,
-                            title, title.Length,
-                            msg, msg.Length,
-                            4, 0, out resp, true
-                        );
-                        //Marshal.GetLastWin32Error();
-                    }
-                    catch { }
-                });
-                t.SetApartmentState(ApartmentState.STA);
-                t.Start();
-            }
         }
 
         protected override void OnStop()

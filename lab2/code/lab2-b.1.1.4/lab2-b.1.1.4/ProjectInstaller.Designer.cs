@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System.ServiceProcess;
 
 namespace lab2_b._1._1._4
 {
@@ -45,21 +44,14 @@ namespace lab2_b._1._1._4
             this.serviceInstaller1.Description = "Lab 2 - Bai 1.4";
             this.serviceInstaller1.DisplayName = "_lab1-b.1.1.4";
             this.serviceInstaller1.ServiceName = "_lab1-b.1.1.4";
-            /*this.serviceInstaller1.AfterInstall += (e, s) =>
+            this.serviceInstaller1.StartType = ServiceStartMode.Automatic;
+            //
+            // after service is installed, start it automically 
+            this.serviceInstaller1.AfterInstall += (s, e) =>
             {
-                var service = new System.Management.ManagementObject(
-                        String.Format("WIN32_Service.Name='{0}'", "_lab1-b.1.1.4"));
-                try
-                {
-                    var paramList = new object[11];
-                    paramList[5] = true;
-                    service.InvokeMethod("Change", paramList);
-                }
-                finally
-                {
-                    service.Dispose();
-                }
-            }; */
+                ServiceInstaller serviceInstaller = (ServiceInstaller)s;
+                (new ServiceController(serviceInstaller.ServiceName)).Start();
+            };
             // 
             // ProjectInstaller
             // 
