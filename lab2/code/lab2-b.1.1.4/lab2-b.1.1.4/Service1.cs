@@ -16,6 +16,7 @@ namespace lab2_b._1._1._4
     {
         public Service1()
         {
+            this.CanHandleSessionChangeEvent = true; 
             InitializeComponent();
         }
 
@@ -36,8 +37,10 @@ namespace lab2_b._1._1._4
         // that event occurs when switch users (???)
         protected override void OnSessionChange(SessionChangeDescription changeDescription)
         {
-            if (changeDescription.Reason == SessionChangeReason.SessionLogon)
-            {
+            if (
+                changeDescription.Reason == SessionChangeReason.SessionLogon
+                || changeDescription.Reason == SessionChangeReason.SessionUnlock
+            ) {
                 // from win vista, session id simply start with 1 and increase
                 // so just brute force the session id
                 for (int session = 5; session > 0; --session)
